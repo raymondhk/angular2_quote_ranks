@@ -1,0 +1,18 @@
+.box{
+  border: 1px solid gray;
+  height: 200px;
+  margin-top: 10px;
+  padding: 0px 20px 20px 20px;
+}
+#button{
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+#quote{
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+#count{
+  margin-top: 40px;
+  margin-bottom: 50px;
+}

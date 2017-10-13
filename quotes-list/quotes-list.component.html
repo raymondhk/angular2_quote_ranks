@@ -1,0 +1,16 @@
+<div class="box">
+  <div class="row">
+    <div class="col-md-6" id="quote">
+      <h4 class="text-center">"{{ quote.quote }}"</h4>
+      <h5 class="text-center">{{ quote.author }}</h5>
+    </div>
+    <div class="col-md-3 text-right" id="count">
+      <h1><span *ngIf="count > 0">+</span>{{ count }}</h1>
+    </div>
+    <div class="col-md-3" id="button">
+      <button class="btn btn-success btn-block" (click)="up()">Vote Up</button>
+      <button class="btn btn-danger btn-block" (click)="down()">Vote Down</button>
+      <button class="btn btn-default btn-block" (click)="triggerDelete()">Delete</button>
+    </div>
+  </div>
+</div>

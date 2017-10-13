@@ -1,0 +1,27 @@
+<div class="box">
+  <h1>Add a Quote:</h1>
+  <form #quotesForm="ngForm" (submit)="onSubmit(quotesForm)">
+    <div class="form-group">
+      <textarea name="quote" id="quote" rows="10" class="form-control" [(ngModel)]="quotes.quote" #quote="ngModel" required minlength="4"></textarea>
+      <span *ngIf="quote.errors && ( quote.dirty || quote.touched )">
+        <span style="color:red" [hidden]="!quote.errors.required">Quote is required!</span>
+        <span style="color:red" [hidden]="!quote.errors.minlength">Quote should be at least 4 character</span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <br>
+      <input type="text" name="author" id="author" [(ngModel)]="quotes.author" required minlength="2" #author="ngModel" class="form-control">
+      <span *ngIf="author.errors && ( author.dirty || author.touched )">
+        <span style="color:red" [hidden]="!author.errors.required">Author is required!</span>
+        <span style="color:red" [hidden]="!author.errors.minlength">Author should be at least 2 character</span>
+      </span>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!quotesForm.form.valid">Add</button>
+  </form>
+  <br>
+  <h1>Quotes List:</h1>
+  <div class="quote-list" *ngFor="let x of allQuotes; let i = index">
+    <div id="x.author"><app-quotes-list [quote]="x" (delete)="delete(i)"></app-quotes-list></div>
+  </div>
+</div>
